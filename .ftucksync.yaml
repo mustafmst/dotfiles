@@ -1,0 +1,8 @@
+- source: /home/mustaf/.config/mustaf_dotfiles/zshrc
+  target: /home/mustaf/.zshrc
+- source: /home/mustaf/.config/mustaf_dotfiles/profile
+  target: /home/mustaf/.profile
+- source: /home/mustaf/.config/mustaf_dotfiles/nvim
+  target: /home/mustaf/.config/nvim
+- source: /home/mustaf/.config/mustaf_dotfiles/gitconfig
+  target: /home/mustaf/.gitconfig

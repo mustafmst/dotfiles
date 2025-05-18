@@ -1,0 +1,41 @@
+[alias]
+    # Create new branch and push it to origin to have reference
+    bn = "!f(){ git cob \"$1\"; git push --set-upstream origin \"$1\";};f"
+    # Add interactively, commit with message and push
+    aicp = "!f(){ git ai; git cim \"$1\"; git ps;};f"
+    # Add all, commit with message and push
+    acp = "!f(){ git aa; git cim \"$1\"; git ps;};f"
+    # Commit with message
+    cim = "!f(){ git ci -m \"$1\";};f"
+    # Add current changes and stash them
+    sha = "!f(){ git aa; git stash;};f"
+    # Print commit tree graph
+    lg = log --graph --all
+    # Remove local branches with no origin ones
+    prune-branches = "!f(){ git fap; git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -d; };f"
+    ci = commit
+    co = checkout
+    cob = checkout -b
+    ps = push
+    pl = pull --rebase
+    aa = add --all
+    ai = add -i
+    undo = reset HEAD --hard
+    st = status
+    psf = push -f
+    rnext = rebase --continue
+    r = rebase
+    mt = mergetool --tool=nvimdiff3
+    fap = fetch -a -p
+    subup = submodule foreach git pull
+[format]
+    pretty = format:%C(green)%h %ar %C(auto)%d %Creset %s | %Cblue%cn
+[user]
+	email = pawel.mstowski@gmail.com
+    name = Paweł Mstowski
+[merge]
+    tool = nvimdiff3
+[mergetool "nvimdiff3"]
+    cmd = nvim -f -d \"$LOCAL\" \"$MERGED\" \"$REMOTE\"
+[init]
+	defaultBranch = main
