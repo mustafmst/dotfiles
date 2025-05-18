@@ -1,3 +1,4 @@
+# this is sync config managed by ftuck (https://github.com/mustafmst/ftuck)
 - source: /home/mustaf/.config/mustaf_dotfiles/zshrc
   target: /home/mustaf/.zshrc
 - source: /home/mustaf/.config/mustaf_dotfiles/profile
